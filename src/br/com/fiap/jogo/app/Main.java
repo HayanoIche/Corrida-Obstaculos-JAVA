@@ -2,6 +2,7 @@ package br.com.fiap.jogo.app;
 
 import br.com.fiap.jogo.model.Dado;
 import br.com.fiap.jogo.model.Jogador;
+import br.com.fiap.jogo.model.Jogo;
 
 import java.util.Scanner;
 
@@ -32,53 +33,60 @@ public class Main
             }
         }
 
-        // Cadastrar Jogadores
-        Jogador[] jogadores = new Jogador[4];
+        // Loop principal do jogo
+        Jogo app;
 
-        int menor = -1;
-        int menor_idade = 1000;
+        String nome;
+        int idade;
 
-        for(int i = 0; i < quantidade; i += 1)
+        System.out.print("Digite o nome do 1º jogador: ");
+        nome = scanner.next() + scanner.nextLine();
+        System.out.print("Digite a idade do 1º jogador: ");
+        idade = scanner.nextInt();
+
+        Jogador j1 = new Jogador(nome, idade);
+
+        System.out.print("Digite o nome do 2º jogador: ");
+        nome = scanner.next() + scanner.nextLine();
+        System.out.print("Digite a idade do 2º jogador: ");
+        idade = scanner.nextInt();
+
+        Jogador j2 = new Jogador(nome, idade);
+
+        if (quantidade == 3)
         {
-            System.out.print("Digite o nome do " + (i + 1) + "º jogador: ");
-            String nome = scanner.next() + scanner.nextLine();
+            System.out.print("Digite o nome do 3º jogador: ");
+            nome = scanner.next() + scanner.nextLine();
+            System.out.print("Digite a idade do 3º jogador: ");
+            idade = scanner.nextInt();
 
-            System.out.print("Digite a idade do " + (i + 1) + "º jogador: ");
-            int idade = scanner.nextInt();
+            Jogador j3 = new Jogador(nome, idade);
 
-            if (idade < menor_idade)
-            {
-                menor_idade = idade;
-                menor = i;
-            }
+            app = new Jogo(j1, j2, j3);
+        }
+        else if (quantidade == 4)
+        {
+            System.out.print("Digite o nome do 3º jogador: ");
+            nome = scanner.next() + scanner.nextLine();
+            System.out.print("Digite a idade do 3º jogador: ");
+            idade = scanner.nextInt();
 
-            jogadores[i] = new Jogador(nome, idade);
+            Jogador j3 = new Jogador(nome, idade);
+
+            System.out.print("Digite o nome do 3º jogador: ");
+            nome = scanner.next() + scanner.nextLine();
+            System.out.print("Digite a idade do 3º jogador: ");
+            idade = scanner.nextInt();
+
+            Jogador j4 = new Jogador(nome, idade);
+
+            app = new Jogo(j1, j2, j3, j4);
+        }
+        else
+        {
+            app = new Jogo(j1, j2);
         }
 
-        System.out.println("o " + (menor+1) +"º jogador é o mais novo, ele começa");
-
-        int[] ordem = new int[4];
-
-        for(int i = 0; i < quantidade; i += 1)
-        {
-            if (i == 0)
-            {
-                ordem[i] = menor;
-                continue;
-            }
-
-
-
-        }
-
-        // Instanciando o dado
-        Dado dado = new Dado();
-
-        // Programa principal
-        boolean running = true;
-        while(running)
-        {
-
-        }
+        app.jogar();
     }
 }

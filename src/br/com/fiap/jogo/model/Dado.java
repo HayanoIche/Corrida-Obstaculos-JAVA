@@ -1,4 +1,4 @@
-package br.com.jockey.model;
+package br.com.fiap.jogo.model;
 
 public class Dado
 {

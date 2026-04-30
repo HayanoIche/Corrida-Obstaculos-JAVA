@@ -1,16 +1,18 @@
 package br.com.fiap.jogo.model;
 
-import br.com.jockey.model.Dado;
+import br.com.fiap.jogo.model.Dado;
 
 public class Jogo
 {
     // Atributos
-    private Jogador j1;
-    private Jogador j2;
-    private Jogador j3;
-    private Jogador j4;
+    private Jogador j1 = null;
+    private Jogador j2 = null;
+    private Jogador j3 = null;
+    private Jogador j4 = null;
 
     private Dado dado;
+
+    private boolean running;
 
     // Construtores
     public Jogo(Jogador j1, Jogador j2)
@@ -32,5 +34,19 @@ public class Jogo
         this.j2 = j2;
         this.j3 = j3;
         this.j4 = j4;
+    }
+
+    // Métodos Workers
+    public void jogar()
+    {
+        while(running)
+        {
+            for(int i = 0; i < 4; i += 1)
+            {
+
+            }
+
+            running = false;
+        }
     }
 }
