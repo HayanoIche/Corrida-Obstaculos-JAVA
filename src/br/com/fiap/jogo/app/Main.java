@@ -68,7 +68,7 @@ public class Main
             }
 
 
-            
+
         }
 
         // Instanciando o dado
