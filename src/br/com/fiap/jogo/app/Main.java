@@ -87,6 +87,9 @@ public class Main
             app = new Jogo(j1, j2);
         }
 
-        app.jogar();
+        scanner.nextLine();
+
+        app.jogar(scanner);
+
     }
 }
