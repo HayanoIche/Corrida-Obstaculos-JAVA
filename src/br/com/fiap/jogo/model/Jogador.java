@@ -7,7 +7,9 @@ public class Jogador
     // Atributos
     private String nome;
     private int idade;
-    private int casaAtual = 0;
+    private int casaAtual = 1;
+
+    private int jogadasPerdidas = 0;
 
     // Construtor Vazio
     public Jogador() {}
@@ -28,4 +30,20 @@ public class Jogador
     public void setIdade(int idade) { this.idade = idade; }
     public void setCasaAtual(int casaAtual) { this.casaAtual = casaAtual; }
 
+    public void perderDuasRodadas()
+    {
+        jogadasPerdidas = 2;
+    }
+
+    public boolean podeJogar()
+    {
+        if (jogadasPerdidas == 0)
+        {
+            return true;
+        }
+        else {
+            jogadasPerdidas -= 1;
+            return false;
+        }
+    }
 }
