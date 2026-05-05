@@ -83,8 +83,7 @@ public class Jogo
                 info = "Casa com Desenho!\nO cavalo caiu no fosso. O jogador sai do jogo\n";
                 j.setCasaAtual(0);
             }
-            else if (j.getCasaAtual() >
-                    = 72)
+            else if (j.getCasaAtual() >= 72)
             {
                 info = "Chegada!\nO cavalo venceu a corrida!\n";
                 estadoFimDeJogo = "Ganharam";
